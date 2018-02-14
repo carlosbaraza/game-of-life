@@ -21,9 +21,7 @@ GridLogic.prototype = {
     this.raw[i][j] = false;
   },
 
-  _firstRule(i, j) {
-    if (!this.prevState[i][j]) return false;
-
+  _nextCellState(i, j) {
     let countAliveNeighbours = 0;
 
     const minColumn = i - 1 < 0 ? 0 : i - 1;
@@ -43,12 +41,18 @@ GridLogic.prototype = {
       }
     }
 
+    // 1st rule
     if (countAliveNeighbours < 2) return false;
-    else return this.prevState[i][j];
-  },
 
-  _nextCellState(i, j) {
-    return this._firstRule(i, j);
+    // 3rd rule
+    if (countAliveNeighbours > 3) return false;
+
+    // 4th rule
+    if (countAliveNeighbours === 3 && !this.prevState[i][j]) return true;
+    else {
+      // 2nd rule
+      return this.prevState[i][j];
+    }
   },
 
   _initPrevState() {
