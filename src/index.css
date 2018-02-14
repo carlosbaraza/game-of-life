@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #aaa;
+}
+
+.App .column {
+}
+.App .dead {
+  background-color: white;
+}
+
+.App .alive {
+  background-color: black;
+}
+
+.App .dead,
+.App .alive {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  margin: 2px;
+}
