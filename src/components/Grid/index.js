@@ -13,6 +13,12 @@ export function GridLogic(size = 5) {
 }
 
 GridLogic.prototype = {
+  setCell(i, j, value) {
+    if (value !== true && value !== false)
+      throw new Error("Only accepted true or false values");
+    this.raw[i][j] = value;
+  },
+
   setCellAlive(i, j) {
     this.raw[i][j] = true;
   },
@@ -79,7 +85,7 @@ export class Grid extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      grid: new GridLogic()
+      grid: new GridLogic(10)
     };
 
     this.state.grid.setCellAlive(2, 1);
@@ -93,19 +99,36 @@ export class Grid extends React.Component {
     });
   }
 
+  toggleCellState(column, row) {
+    this.state.grid.setCell(column, row, !this.state.grid.raw[column][row]);
+    this.setState({}); // Force Update
+  }
+
+  renderColumn = (column, columnIndex) => {
+    return (
+      <div key={`column-${columnIndex}`} className="column">
+        {column.map(this.renderCell.bind(this, columnIndex))}
+      </div>
+    );
+  };
+
+  renderCell(columnIndex, cell, rowIndex) {
+    return (
+      <span
+        key={`column-${columnIndex}-row-${rowIndex}`}
+        className={cell ? "alive" : "dead"}
+        onClick={this.toggleCellState.bind(this, columnIndex, rowIndex)}
+      />
+    );
+  }
+
   render() {
     const { grid } = this.state;
 
     return (
       <div>
         <button onClick={() => this.nextState()}>next</button>
-        {grid.raw.map(column => {
-          return (
-            <div className="column">
-              {column.map(cell => <span className={cell ? "alive" : "dead"} />)}
-            </div>
-          );
-        })}
+        {grid.raw.map(this.renderColumn)}
       </div>
     );
   }
