@@ -1,4 +1,5 @@
 import React from "react";
+import "./index.css";
 
 export function GridLogic(size = 5) {
   this.raw = [];
@@ -106,7 +107,7 @@ export class Grid extends React.Component {
 
   renderColumn = (column, columnIndex) => {
     return (
-      <div key={`column-${columnIndex}`} className="column">
+      <div key={`column-${columnIndex}`} className="Grid__Column">
         {column.map(this.renderCell.bind(this, columnIndex))}
       </div>
     );
@@ -116,7 +117,7 @@ export class Grid extends React.Component {
     return (
       <span
         key={`column-${columnIndex}-row-${rowIndex}`}
-        className={cell ? "alive" : "dead"}
+        className={`Grid__GridCell Grid__GridCell--${cell ? "alive" : "dead"}`}
         onClick={this.toggleCellState.bind(this, columnIndex, rowIndex)}
       />
     );
@@ -126,7 +127,7 @@ export class Grid extends React.Component {
     const { grid } = this.state;
 
     return (
-      <div>
+      <div className="Grid">
         <button onClick={() => this.nextState()}>next</button>
         {grid.raw.map(this.renderColumn)}
       </div>

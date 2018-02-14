@@ -1,0 +1,14 @@
+.Grid__GridCell--dead {
+  background-color: white;
+}
+
+.Grid__GridCell--alive {
+  background-color: black;
+}
+
+.Grid__GridCell {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  margin: 2px;
+}
