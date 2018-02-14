@@ -86,12 +86,18 @@ export class Grid extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      grid: new GridLogic(10)
+      grid: new GridLogic(15)
     };
 
-    this.state.grid.setCellAlive(2, 1);
-    this.state.grid.setCellAlive(2, 2);
-    this.state.grid.setCellAlive(2, 3);
+    this.state.grid.setCellAlive(9, 5);
+    this.state.grid.setCellAlive(9, 6);
+    this.state.grid.setCellAlive(9, 7);
+    this.state.grid.setCellAlive(9, 8);
+    this.state.grid.setCellAlive(9, 9);
+    this.state.grid.setCellAlive(10, 5);
+    this.state.grid.setCellAlive(10, 6);
+    this.state.grid.setCellAlive(10, 8);
+    this.state.grid.setCellAlive(10, 9);
   }
 
   nextState() {
@@ -114,10 +120,12 @@ export class Grid extends React.Component {
   };
 
   renderCell(columnIndex, cell, rowIndex) {
+    const cellState = cell ? "alive" : "dead";
     return (
       <span
         key={`column-${columnIndex}-row-${rowIndex}`}
-        className={`Grid__GridCell Grid__GridCell--${cell ? "alive" : "dead"}`}
+        className={`Grid__GridCell Grid__GridCell--${cellState}`}
+        title={`${cellState} (Column: ${columnIndex}, Row: ${rowIndex})`}
         onClick={this.toggleCellState.bind(this, columnIndex, rowIndex)}
       />
     );
