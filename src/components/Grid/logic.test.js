@@ -1,4 +1,4 @@
-import { GridLogic } from ".";
+import { GridLogic } from "./logic";
 
 describe("game logic", () => {
   describe("grid initialization", () => {
