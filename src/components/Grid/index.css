@@ -7,12 +7,23 @@
 }
 
 .Grid button {
-  width: 100px;
+  width: 150px;
   border: none;
   padding: 10px;
   align-self: center;
-  margin-bottom: 20px;
+  margin-top: 20px;
   cursor: pointer;
+  font-family: monospace;
+  font-size: 20px;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid white;
+}
+
+.Grid button:hover,
+.Grid button:focus,
+.Grid button:active {
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .Grid__Column {
@@ -26,7 +37,7 @@
 }
 
 .Grid__GridCell--alive {
-  background-color: black;
+  background-color: #00dff7;
 }
 
 .Grid__GridCell {
