@@ -106,6 +106,16 @@ export class Grid extends React.Component {
     });
   }
 
+  togglePlay = () => {
+    if (this.state.playIntervalHandler) {
+      clearInterval(this.state.playIntervalHandler);
+      this.setState({ playIntervalHandler: null });
+    } else {
+      const playIntervalHandler = setInterval(this.nextState.bind(this), 1000);
+      this.setState({ playIntervalHandler });
+    }
+  };
+
   toggleCellState(column, row) {
     this.state.grid.setCell(column, row, !this.state.grid.raw[column][row]);
     this.setState({}); // Force Update
@@ -137,9 +147,14 @@ export class Grid extends React.Component {
     return (
       <div className="Grid">
         {grid.raw.map(this.renderColumn)}
-        <button tabIndex={0} onClick={() => this.nextState()}>
-          NEXT TICK
-        </button>
+        <div>
+          <button tabIndex={0} onClick={() => this.nextState()}>
+            NEXT TICK
+          </button>
+          <button tabIndex={0} onClick={this.togglePlay}>
+            {this.state.playIntervalHandler ? "PAUSE" : "PLAY"}
+          </button>
+        </div>
       </div>
     );
   }
