@@ -128,7 +128,7 @@ export class Grid extends React.Component {
 
     return (
       <div className="Grid">
-        <button onClick={() => this.nextState()}>next</button>
+        <button onClick={() => this.nextState()}>Next tick</button>
         {grid.raw.map(this.renderColumn)}
       </div>
     );

@@ -1,3 +1,26 @@
+.Grid {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.Grid button {
+  width: 100px;
+  border: none;
+  padding: 10px;
+  align-self: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.Grid__Column {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .Grid__GridCell--dead {
   background-color: white;
 }
@@ -11,4 +34,5 @@
   height: 30px;
   display: inline-block;
   margin: 2px;
+  cursor: pointer;
 }
