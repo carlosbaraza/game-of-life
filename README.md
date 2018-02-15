@@ -1,6 +1,8 @@
-![Conway's Game of Life](./docs/screenshot.jpg)
+[![Conway's Game of Life](./docs/screenshot.jpg)](https://carlosbaraza.github.io/game-of-life)
 
 # Conway's Game of Life
+
+[Play the Game of Life now!](https://carlosbaraza.github.io/game-of-life)
 
 This repository is a simple implementation of
 [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#Iteration).
@@ -16,6 +18,7 @@ Feel free to submit PRs with any cool feature you can
 imagine.
 
 Some ideas are:
+
 * 3D version
 * Posibility to resize the grid
 * Allow changing the interval playback time
