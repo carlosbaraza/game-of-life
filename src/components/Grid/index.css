@@ -13,11 +13,14 @@
   align-self: center;
   margin: 20px 5px 0 5px;
   cursor: pointer;
-  font-family: monospace;
   font-size: 20px;
   color: white;
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid white;
+}
+
+.Grid .explanation {
+  opacity: 0.7;
 }
 
 .Grid button:hover,
@@ -46,4 +49,8 @@
   display: inline-block;
   margin: 2px;
   cursor: pointer;
+}
+
+.Grid__GridCell:hover {
+  opacity: 0.8;
 }

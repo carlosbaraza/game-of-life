@@ -66,13 +66,14 @@ export class Grid extends React.Component {
 
     return (
       <div className="Grid">
+        <p className="explanation">Click a cell to toggle LIFE or DEATH</p>
         {grid.raw.map(this.renderColumn)}
         <div>
           <button tabIndex={0} onClick={() => this.nextState()}>
-            NEXT TICK
+            NEXT STEP
           </button>
           <button tabIndex={0} onClick={this.togglePlay}>
-            {this.state.playIntervalHandler ? "PAUSE" : "PLAY"}
+            {this.state.playIntervalHandler ? "■ PAUSE" : "▶ PLAY"}
           </button>
         </div>
       </div>

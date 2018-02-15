@@ -1,0 +1,29 @@
+.Footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  left: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  opacity: 0.7;
+}
+
+.Footer__source {
+  float: left;
+}
+
+.Footer__made-by {
+  float: right;
+}
+
+@media (max-width: 768px) {
+  .Footer__source {
+    float: none;
+    display: block;
+  }
+
+  .Footer__made-by {
+    float: none;
+    display: block;
+  }
+}

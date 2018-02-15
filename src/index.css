@@ -1,7 +1,15 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  background: #aaa;
+  font-family: monospace;
+  color: white;
   overflow: hidden;
+}
+
+a:hover,
+a:focus {
+  opacity: 0.8;
+}
+a:visited {
+  color: white;
 }
