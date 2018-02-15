@@ -4,6 +4,7 @@ body {
   font-family: monospace;
   color: white;
   overflow: hidden;
+  background: #03163e;
 }
 
 a:hover,
