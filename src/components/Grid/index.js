@@ -66,9 +66,11 @@ export class Grid extends React.Component {
 
     return (
       <div className="Grid">
-        <p className="explanation">Click a cell to toggle LIFE or DEATH</p>
+        <div className="Grid__explanation">
+          <p>Click a cell to toggle LIFE or DEATH</p>
+        </div>
         {grid.raw.map(this.renderColumn)}
-        <div>
+        <div className="Grid__controls">
           <button tabIndex={0} onClick={() => this.nextState()}>
             NEXT STEP
           </button>
