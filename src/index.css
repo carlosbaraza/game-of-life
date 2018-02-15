@@ -8,9 +8,15 @@ body {
 }
 
 a:hover,
-a:focus {
+a:focus,
+a:active {
   opacity: 0.8;
 }
+
+a,
+a:hover,
+a:focus,
+a:active,
 a:visited {
   color: white;
 }
